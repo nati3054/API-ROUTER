@@ -3,7 +3,7 @@
 Este projeto é uma aplicação **frontend** desenvolvida com **React** (via **Vite**) que realiza operações de **CRUD** (Create, Read, Update, Delete) para produtos, consumindo uma **API REST pública**.  
 O objetivo é demonstrar o uso de **rotas, integração com API e interface moderna** utilizando o **Material UI**.
 
-> 🔗 **API utilizada:** [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos)
+> 🔗 **API utilizada:** [http://leoproti.com.br/produtos](http://leoproti.com.br/produtos)
 
 ---
 
@@ -98,22 +98,22 @@ src/
 
 ```js
 // GET - Listar todos os produtos
-axios.get("http://leoproti.com.br:8004/produtos");
+axios.get("http://leoproti.com.br/produtos");
 
 // POST - Criar novo produto
-axios.post("http://leoproti.com.br:8004/produtos", {
+axios.post("http://leoproti.com.br/produtos", {
   nome: "Produto Novo",
   preco: 10
 });
 
 // PUT - Atualizar produto existente
-axios.put("http://leoproti.com.br:8004/produtos/1", {
+axios.put("http://leoproti.com.br/produtos/1", {
   nome: "Produto Atualizado",
   preco: 20
 });
 
 // DELETE - Remover produto
-axios.delete("http://leoproti.com.br:8004/produtos/1");
+axios.delete("http://leoproti.com.br/produtos/1");
 ```
 
 ---

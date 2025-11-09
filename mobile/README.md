@@ -3,7 +3,7 @@
 Este projeto é uma aplicação **React Native** criada com **Expo**, que realiza operações de **CRUD** (Create, Read, Update, Delete) de produtos consumindo uma **API REST pública**.  
 O objetivo é demonstrar o uso de **rotas, navegação e integração com API** em um app mobile moderno.
 
-> 🔗 **API utilizada:** [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos)
+> 🔗 **API utilizada:** [http://leoproti.com.br/produtos](http://leoproti.com.br/produtos)
 
 ---
 
@@ -101,22 +101,22 @@ src/
 
 ```js
 // GET - Listar todos os produtos
-axios.get("http://leoproti.com.br:8004/produtos");
+axios.get("http://leoproti.com.br/produtos");
 
 // POST - Criar um novo produto
-axios.post("http://leoproti.com.br:8004/produtos", {
+axios.post("http://leoproti.com.br/produtos", {
   nome: "Produto Novo",
   preco: 10
 });
 
 // PUT - Atualizar um produto
-axios.put("http://leoproti.com.br:8004/produtos/1", {
+axios.put("http://leoproti.com.br/produtos/1", {
   nome: "Produto Atualizado",
   preco: 20
 });
 
 // DELETE - Remover um produto
-axios.delete("http://leoproti.com.br:8004/produtos/1");
+axios.delete("http://leoproti.com.br/produtos/1");
 ```
 
 ---

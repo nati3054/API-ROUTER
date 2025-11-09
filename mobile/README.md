@@ -1,17 +1,24 @@
-# Trabalho Final - React Native CRUD Produtos (Expo)
+# 📱 Trabalho Final – React Native CRUD de Produtos (Expo)
 
-Este projeto é uma aplicação **React Native** criada com **Expo** que realiza operações de CRUD (Create, Read, Update, Delete) para produtos, utilizando a mesma API pública: [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos).
+Este projeto é uma aplicação **React Native** criada com **Expo**, que realiza operações de **CRUD** (Create, Read, Update, Delete) de produtos consumindo uma **API REST pública**.  
+O objetivo é demonstrar o uso de **rotas, navegação e integração com API** em um app mobile moderno.
 
-## Funcionalidades
+> 🔗 **API utilizada:** [http://leoproti.com.br:8004/produtos](http://leoproti.com.br:8004/produtos)
 
-- Listagem de produtos
-- Cadastro de novo produto
-- Edição de produto existente
-- Exclusão de produto
-- Interface mobile moderna e responsiva
-- Navegação entre telas com React Navigation
+---
 
-## Estrutura esperada do produto
+## 🚀 Funcionalidades
+
+✅ Listagem de produtos  
+✅ Cadastro de novos produtos  
+✅ Edição de produtos existentes  
+✅ Exclusão de produtos  
+✅ Interface responsiva e amigável  
+✅ Navegação entre telas com **React Navigation**
+
+---
+
+## 📦 Estrutura Esperada do Produto (API)
 
 ```json
 {
@@ -21,134 +28,134 @@ Este projeto é uma aplicação **React Native** criada com **Expo** que realiza
 }
 ```
 
-## Tecnologias Utilizadas
+---
 
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/) (facilita o desenvolvimento e testes)
-- [React Navigation](https://reactnavigation.org/)
-- [Axios](https://axios-http.com/)
+## 🛠️ Tecnologias Utilizadas
 
-## Instalação do Projeto
+| Tecnologia | Finalidade |
+|-------------|-------------|
+| [React Native](https://reactnative.dev/) | Desenvolvimento mobile multiplataforma |
+| [Expo](https://expo.dev/) | Execução e empacotamento do app |
+| [React Navigation](https://reactnavigation.org/) | Gerenciamento de rotas e telas |
+| [Axios](https://axios-http.com/) | Consumo da API REST |
 
-1. Instale o Expo CLI globalmente (caso ainda não tenha):
+---
 
+## ⚙️ Instalação do Projeto
+
+1. **Instale o Expo CLI** (caso ainda não tenha):
    ```bash
    npm install -g expo-cli
    ```
 
-2. Crie o projeto com Expo (caso ainda não tenha):
-
+2. **Crie ou acesse seu projeto Expo:**
    ```bash
    npx create-expo-app@latest app
    cd app
    ```
 
-3. Instale as dependências principais:
-
+3. **Instale as dependências principais:**
    ```bash
    npm install @react-navigation/native @react-navigation/native-stack
    npm install axios
    npx expo install react-native-screens react-native-safe-area-context
    ```
 
-## Como rodar o projeto
+---
+
+## ▶️ Como Rodar o Projeto
 
 ```bash
 expo start
 ```
 
-Abra o app no seu emulador ou dispositivo usando o QR Code exibido no terminal.
+Abra o app **Expo Go** no celular e escaneie o QR Code exibido no terminal.
 
-## Estrutura de Pastas Sugerida
-
-- `src/screens` — Telas principais (Listar, Criar, Editar)
-- `src/components` — Componentes reutilizáveis (Formulário, Lista, etc)
-- `src/services` — Serviços para requisições HTTP (Axios)
-- `src/router` — Definição das rotas de navegação
-
-## Rotas da Aplicação
-
-- `Produtos` — Lista todos os produtos
-- `NovoProduto` — Tela para cadastrar novo produto
-- `EditarProduto` — Tela para editar produto existente
-
-## Exemplo de Requisição para a API
-
-```js
-// GET todos os produtos
-axios.get("http://leoproti.com.br:8004/produtos")
-
-// POST novo produto
-axios.post("http://leoproti.com.br:8004/produtos", { nome: "Produto", preco: 10 })
-
-// PUT atualizar produto
-axios.put("http://leoproti.com.br:8004/produtos/1", { nome: "Produto Atualizado", preco: 20 })
-
-// DELETE remover produto
-axios.delete("http://leoproti.com.br:8004/produtos/1")
-```
-
-## Observações
-
-- O projeto utiliza React Navigation para navegação entre telas.
-- Todas as operações de CRUD são realizadas diretamente na API fornecida.
-- Para rodar no dispositivo físico, use o app Expo Go.
+> 💡 Dica: também é possível testar no **Android Studio** ou **emulador iOS**.
 
 ---
 
-Siga as instruções acima para rodar e explorar o projeto no seu celular ou emulador!
+## 🧩 Estrutura de Pastas Recomendada
 
-# Expo Router - Navegação no React Native com Expo
+```
+src/
+├── screens/      # Telas principais (Listar, Criar, Editar)
+├── components/   # Componentes reutilizáveis (Formulário, Lista, Botões)
+├── services/     # Configuração do Axios e chamadas HTTP
+└── router/       # Definição das rotas e navegação
+```
 
-O **Expo Router** é uma solução moderna de navegação para projetos React Native criados com Expo. Ele permite criar rotas e navegação de forma semelhante ao Next.js, usando a estrutura de pastas e arquivos para definir as telas do app.
+---
 
-## Como funciona o Expo Router?
+## 🌍 Rotas da Aplicação
 
-- **Arquivos e pastas dentro da pasta `app/` representam rotas.**
-  - `app/index.tsx` → rota inicial `/`
-  - `app/produtos.tsx` → rota `/produtos`
-  - `app/produtos/[id].tsx` → rota dinâmica `/produtos/123`
-- **Não é necessário configurar stacks manualmente.**
-- **A navegação é feita usando hooks e componentes do próprio Expo Router.**
+| Rota | Descrição |
+|------|------------|
+| `/Produtos` | Exibe todos os produtos |
+| `/NovoProduto` | Permite cadastrar novo produto |
+| `/EditarProduto/:id` | Edita um produto existente |
 
-## Exemplo de Estrutura
+---
+
+## 🔌 Exemplos de Requisições à API
+
+```js
+// GET - Listar todos os produtos
+axios.get("http://leoproti.com.br:8004/produtos");
+
+// POST - Criar um novo produto
+axios.post("http://leoproti.com.br:8004/produtos", {
+  nome: "Produto Novo",
+  preco: 10
+});
+
+// PUT - Atualizar um produto
+axios.put("http://leoproti.com.br:8004/produtos/1", {
+  nome: "Produto Atualizado",
+  preco: 20
+});
+
+// DELETE - Remover um produto
+axios.delete("http://leoproti.com.br:8004/produtos/1");
+```
+
+---
+
+## 🧭 Expo Router – Navegação Simplificada com Expo
+
+O **Expo Router** oferece uma forma moderna de criar rotas em projetos **Expo**, inspirada no modelo do **Next.js**.  
+Com ele, **a estrutura de pastas define automaticamente as rotas**.
+
+### 📂 Estrutura de Exemplo
 
 ```
 app/
-  index.tsx           // Tela inicial
-  produtos.tsx        // Lista de produtos
+  index.tsx           # Tela inicial
+  produtos.tsx        # Lista de produtos
   produtos/
-    [id].tsx          // Tela de detalhes/edição de produto
+    [id].tsx          # Tela de detalhes ou edição
 ```
 
-## Como navegar entre telas
-
-Use o hook `useRouter` do Expo Router:
+### 🧠 Como Navegar entre Telas
 
 ```tsx
 import { useRouter } from "expo-router";
 
 const router = useRouter();
 
-router.push("/produtos"); // Navega para a lista de produtos
-router.push("/produtos/1"); // Navega para o produto de id 1
-router.back(); // Volta para a tela anterior
+router.push("/produtos");    // Vai para a tela de produtos
+router.push("/produtos/1");  // Vai para o produto com id 1
+router.back();               // Volta para a tela anterior
 ```
 
-## Como rodar um projeto com Expo Router
+### ⚙️ Configuração Rápida do Expo Router
 
-1. Crie o projeto com Expo:
-   ```bash
-   npx create-expo-app@latest app
-   cd app
-   ```
-
-2. Instale o Expo Router:
+1. Instale:
    ```bash
    npm install expo-router
    ```
 
-3. No arquivo `app.json` ou `app.config.js`, defina o entryPoint:
+2. No `app.json` ou `app.config.js`:
    ```json
    {
      "expo": {
@@ -157,22 +164,33 @@ router.back(); // Volta para a tela anterior
    }
    ```
 
-4. Estruture suas telas dentro da pasta `app/` conforme mostrado acima.
-
-5. Rode o projeto normalmente:
+3. Estruture suas telas dentro da pasta `app/` e rode:
    ```bash
    npx expo start
    ```
 
-## Observações
+---
 
-- O arquivo `app/index.tsx` é a tela inicial.
-- Não use `App.tsx` junto com Expo Router, pois o roteamento é feito a partir da pasta `app/`.
-- Para rotas aninhadas e dinâmicas, use subpastas e colchetes (ex: `[id].tsx`).
+## 🧾 Observações Importantes
 
-## Referências
-
-- [Documentação Expo Router](https://expo.github.io/router/docs)
-- [Exemplo oficial](https://github.com/expo/router/tree/main/example)
+- O projeto utiliza **React Navigation** ou **Expo Router** para a navegação.  
+- Todas as operações de CRUD são realizadas **diretamente na API pública**.  
+- Para testes em dispositivos físicos, use o **app Expo Go**.  
+- As telas foram construídas com foco em **usabilidade e responsividade**.
 
 ---
+
+## 📚 Referências
+
+- [Documentação do React Native](https://reactnative.dev/)
+- [Documentação do Expo](https://docs.expo.dev/)
+- [Documentação do Axios](https://axios-http.com/docs/intro)
+- [React Navigation](https://reactnavigation.org/)
+- [Documentação do Expo Router](https://expo.github.io/router/docs)
+
+---
+
+## ✨ Autor(a)
+
+**Natalia Ferreira**  
+💻 Projeto desenvolvido como atividade prática da disciplina **Desenvolvimento Profissional: Estudo de Caso com Rotas e Consumo de API**.
